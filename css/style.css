@@ -1,0 +1,585 @@
+/* Memoir Landing Page - Kinfolk Style */
+
+/* 
+  Color Palette:
+  - Main Background: #F9F8F6 (킨포크풍 크림색)
+  - Main Text: #333333 (부드러운 블랙)
+  - Accent Button: #A67B71 (로즈 베이지)
+  - Sub Text/Line: #D1CDC7 (연한 그레이)
+*/
+
+/* CSS Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Serif KR', serif;
+    background-color: #F9F8F6;
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 500;
+}
+
+button {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* Header Navigation Inside Hero */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+.start-button {
+    padding: 12px 28px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333333;
+    border: 1px solid rgba(209, 205, 199, 0.5);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.start-button:hover {
+    background-color: #A67B71;
+    color: #FFFFFF;
+    border-color: #A67B71;
+}
+
+/* Hero Section */
+.hero {
+    height: 1000px;
+    max-height: 1000px;
+    min-height: 800px;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1476673160081-cf065607f449?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(249, 248, 246, 0.6) 0%, rgba(249, 248, 246, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+    color: #333333;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666666;
+    letter-spacing: 0.02em;
+}
+
+/* Chapter Sections */
+.chapter-section {
+    padding: 120px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.chapter-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chapter-layout {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.chapter-number {
+    font-size: 8rem;
+    font-weight: 300;
+    color: #D1CDC7;
+    line-height: 1;
+    font-family: 'Noto Serif KR', serif;
+    letter-spacing: -0.05em;
+}
+
+.chapter-content {
+    padding-top: 20px;
+}
+
+.chapter-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+.chapter-subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #666666;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.chapter-description {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: #555555;
+}
+
+.chapter-description p {
+    margin-bottom: 20px;
+}
+
+.chapter-description p:last-child {
+    margin-bottom: 0;
+}
+
+.chapter-description strong {
+    font-weight: 600;
+    color: #333333;
+}
+
+/* Process Section */
+.process-section {
+    padding: 140px 0;
+    background-color: #FEFEFE;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.process-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.process-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 80px;
+    letter-spacing: -0.01em;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.process-step {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #F9F8F6;
+    border: 1px solid #D1CDC7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #A67B71;
+    margin: 0 auto 30px;
+    font-family: 'Noto Serif KR', serif;
+}
+
+.step-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.step-description {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #666666;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta-button {
+    padding: 18px 48px;
+    background-color: #A67B71;
+    color: #FFFFFF;
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.cta-button:hover {
+    background-color: #956A61;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(166, 123, 113, 0.25);
+}
+
+/* Table of Contents Section */
+.toc-section {
+    padding: 140px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.toc-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toc-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.toc-line {
+    width: 1px;
+    height: 80px;
+    background-color: #D1CDC7;
+    margin: 0 auto 30px;
+}
+
+.toc-title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.toc-content {
+    margin-bottom: 60px;
+}
+
+.toc-item {
+    display: flex;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid #EEEEEE;
+    transition: all 0.3s ease;
+}
+
+.toc-item:hover {
+    background-color: #FEFEFE;
+    padding-left: 20px;
+}
+
+.toc-chapter {
+    font-size: 0.9rem;
+    color: #999999;
+    min-width: 50px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.toc-text {
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.toc-page {
+    font-size: 0.95rem;
+    color: #999999;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 20px;
+}
+
+.toc-decoration {
+    margin-top: 60px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+/* Footer */
+.footer {
+    padding: 60px 0;
+    border-top: 1px solid #EEEEEE;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: #999999;
+    font-weight: 300;
+}
+
+/* Fade In Animations */
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .chapter-layout {
+        grid-template-columns: 120px 1fr;
+        gap: 40px;
+    }
+
+    .chapter-number {
+        font-size: 6rem;
+    }
+
+    .chapter-title {
+        font-size: 1.8rem;
+    }
+
+    .chapter-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container, .container-narrow {
+        padding: 0 30px;
+    }
+
+    .header-container {
+        padding: 18px 30px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .start-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        min-height: 600px;
+        height: 600px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .chapter-section {
+        padding: 80px 0;
+    }
+
+    .chapter-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .chapter-number {
+        font-size: 4rem;
+    }
+
+    .chapter-title {
+        font-size: 1.6rem;
+    }
+
+    .chapter-subtitle {
+        font-size: 1.15rem;
+        margin-bottom: 30px;
+    }
+
+    .chapter-description {
+        font-size: 1.05rem;
+    }
+
+    .process-section {
+        padding: 100px 0;
+    }
+
+    .process-title {
+        font-size: 1.6rem;
+        margin-bottom: 60px;
+    }
+
+    .toc-section {
+        padding: 100px 0;
+    }
+
+    .toc-title {
+        font-size: 1.6rem;
+    }
+
+    .toc-text {
+        font-size: 1.05rem;
+    }
+
+    .cta-button {
+        padding: 16px 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, .container-narrow {
+        padding: 0 20px;
+    }
+
+    .header-container {
+        padding: 16px 20px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .start-button {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        height: 500px;
+        min-height: 500px;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .chapter-number {
+        font-size: 3rem;
+    }
+
+    .chapter-title {
+        font-size: 1.4rem;
+    }
+
+    .chapter-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .toc-item {
+        flex-wrap: wrap;
+    }
+
+    .toc-text {
+        flex-basis: 100%;
+        margin: 5px 0;
+    }
+}
