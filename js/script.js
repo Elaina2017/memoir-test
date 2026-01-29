@@ -34,13 +34,64 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Start button (Login/Signup)
+    // Login Modal functionality
+    const loginModal = document.getElementById('loginModal');
     const startButton = document.querySelector('.start-button');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    
+    // Open modal
     if (startButton) {
         startButton.addEventListener('click', function() {
-            console.log('시작하기 clicked - Login/Signup');
-            alert('로그인/회원가입 페이지로 이동합니다.');
-            // Future: window.location.href = '/login';
+            console.log('시작하기 clicked - Opening login modal');
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    }
+    
+    // Close modal - close button
+    if (modalClose) {
+        modalClose.addEventListener('click', function() {
+            closeModal();
+        });
+    }
+    
+    // Close modal - clicking overlay
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', function() {
+            closeModal();
+        });
+    }
+    
+    // Close modal - ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && loginModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    function closeModal() {
+        loginModal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    // Social login buttons
+    const googleBtn = document.querySelector('.google-btn');
+    const kakaoBtn = document.querySelector('.kakao-btn');
+    
+    if (googleBtn) {
+        googleBtn.addEventListener('click', function() {
+            console.log('Google login clicked');
+            alert('구글 로그인 기능이 곧 연동됩니다.');
+            // Future: Implement Google OAuth
+        });
+    }
+    
+    if (kakaoBtn) {
+        kakaoBtn.addEventListener('click', function() {
+            console.log('Kakao login clicked');
+            alert('카카오 로그인 기능이 곧 연동됩니다.');
+            // Future: Implement Kakao OAuth
         });
     }
 
